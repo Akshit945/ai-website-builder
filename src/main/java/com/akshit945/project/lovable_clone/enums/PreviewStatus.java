@@ -1,0 +1,5 @@
+package com.akshit945.project.lovable_clone.enums;
+
+public enum PreviewStatus {
+    CREATING, RUNNING, FAILED, TERMINATED
+}

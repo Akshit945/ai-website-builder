@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: lovable-clone          # Application name (used in logs, tracing, Eureka, etc.)
+    description: this is application  # Short description of the application
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lovable_clone
+    # JDBC connection URL for PostgreSQL
+    # Format: jdbc:postgresql://<host>:<port>/<database>
+
+    username: apple               # Database username
+    password: password            # Database password (use env variables in production)
+    driver-class-name: org.postgresql.Driver
+    # PostgreSQL JDBC driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      # Controls schema generation:
+      # none   → no DB changes
+      # validate → validate schema only
+      # update → auto update schema (DEV only)
+      # create → drop & create on startup
+      # create-drop → drop on shutdown
+      # ❗ Do NOT use update/create in production
+
+    show-sql: true
+    # Logs SQL queries in console (use false in prod)
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Tells Hibernate which SQL dialect to use
+
+        format_sql: true
+        # Formats SQL for better readability in logs
